@@ -12,6 +12,33 @@ BOT_NAME = "bookscraper"
 SPIDER_MODULES = ["bookscraper.spiders"]
 NEWSPIDER_MODULE = "bookscraper.spiders"
 
+FEEDS = {
+   'booksdata.json': {'format': 'json'}
+}
+
+SCRAPEOPS_API_KEY = '43a93531-f688-4d21-b51a-e339f3e7eaef'
+SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+SCRAPEOPS_NUM_RESULTS = 5
+
+ROTATING_PROXY_LIST = [
+   '86.123.217.199:8080',
+   '182.160.102.149:3128',
+   '178.212.65.61:3629',
+   '51.75.173.161:1080',
+   '178.212.49.96:1080',
+]
+
+PROXY_USER = 'asdas3a4545'
+PROXY_PASSWORD = '12345678'
+PROXY_ENDPOINT = 'gate.smartproxy.com'
+PROXY_POST = '7000'
+
+# for pip install scrapeops-scrapy-proxy-sdk
+
+# SCRAPEOPS_API_KEY = 'df079156-1232-41f4-994c-955c39aef4'
+# SCRAPOPS_PROXY_ENABLED = True
+# SCRAPEOPS_PROXY_SETTINGS = {'country': 'us'} # this will send all the trafic via US
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
@@ -52,6 +79,12 @@ SPIDER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
+   # "bookscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware": 400,
+   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+   # "bookscraper.middlewares.MySmartProxyMiddleware": 350, # For smart proxy
+   # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610, # for fixed ip
+   # "rotating_proxies.middlewares.BanDetectionMiddleware": 620, # for fixed ip
+   # "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
 }
 
 # Enable or disable extensions
@@ -64,6 +97,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "bookscraper.pipelines.BookscraperPipeline": 300,
+   # "bookscraper.pipelines.SaveToMySQLPipeline": 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
