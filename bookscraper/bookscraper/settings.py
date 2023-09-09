@@ -80,23 +80,23 @@ SPIDER_MIDDLEWARES = {
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   # "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543, # commet for scrapyops job schedule
+   "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543, # commet for scrapyops job schedule
    # "bookscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware": 400,
-   # "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400, # commet for scrapyops job schedule
+   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400, # commet for scrapyops job schedule
    # "bookscraper.middlewares.MySmartProxyMiddleware": 350, # For smart proxy
    # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610, # for fixed ip
    # "rotating_proxies.middlewares.BanDetectionMiddleware": 620, # for fixed ip
    # "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
-   'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
-   'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+   # 'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+   # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
 }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-EXTENSIONS = {
-   # "scrapy.extensions.telnet.TelnetConsole": None,
-   'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500,
-}
+# EXTENSIONS = {
+#    # "scrapy.extensions.telnet.TelnetConsole": None,
+#    'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500,
+# }
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html

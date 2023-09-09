@@ -33,6 +33,8 @@ Now update scrapy.cfg
 19. Now run the spider
 	--> $ curl http://localhost:6800/schedule.json -d project=default -d spider=bookspider
 		--> result with jobid: {"node_name": "scrapy", "status": "ok", "jobid": "376c82ac4ed011ee801f011a7d27b2cf"}
+	--> if not work try, curl http://localhost:6800/schedule.json -d project=bookscraper -d spider=bookspider
+		--> {"node_name": "scrapy", "status": "ok", "jobid": "f9e670364ef311ee9f1ed945ed38de07"}
 -----------------
 For schedule scrapyd instal Scrapydweb: carefull, this does not support greater then 3.9. Better try 3.8
 20. pip install --upgrade git+https://github.com/my8100/scrapydweb.git
