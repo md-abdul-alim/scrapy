@@ -80,9 +80,9 @@ SPIDER_MIDDLEWARES = {
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
+   # "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543, # commet for scrapyops job schedule
    # "bookscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware": 400,
-   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+   # "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400, # commet for scrapyops job schedule
    # "bookscraper.middlewares.MySmartProxyMiddleware": 350, # For smart proxy
    # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610, # for fixed ip
    # "rotating_proxies.middlewares.BanDetectionMiddleware": 620, # for fixed ip

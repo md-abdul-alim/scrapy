@@ -168,5 +168,33 @@ Now check http://157.230.240.223:5000/1/jobs/
 ----------ScrapyOPS UI Dashboard---------
 From https://scrapeops.io/app/monitoring-guide follow instruction
 39. pip install scrapeops-scrapy
-40. 
+40. Now update settings file.
+	--> SCRAPEOPS_API_KEY = '43a93531-f688-4d21-b51a-e339f3e7eaef'
+  
+	--> EXTENSIONS = {
+        	'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+        }
+  
+	--> DOWNLOADER_MIDDLEWARES = {
+        	'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+        	'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+        }
+41. Now go to Service & Deployment. https://scrapeops.io/app/servers --> https://scrapeops.io/app/servers/create
+	--> From Scrapyd
+		--> set server name
+		--> server ip address from digital ocean and save
+		--> from Server provisioning
+			--> simple install (Ubuntu) run bellow command in root dir
+				--> wget -O scrapeops_setup.sh "https://assets-scrapeops.nyc3.digitaloceanspaces.com/Bash_Scripts/scrapeops_setup.sh"; bash scrapeops_setup.sh
+	--> Now go back and check https://scrapeops.io/app/servers
+		--> if Status connected, then connection ok.
+	--> From server details, click here and Schedule jobs
+		--> if everything ok, then we will get our spider (bookspider) here.
+		--> After schedule a job go to -> https://scrapeops.io/app/jobs
+	--> Go to Jobs to see the scheduled jobs
+
+42. If there are any issues, debuge in scrapy/bookscraper/
+	--> scrapy list
+		--> if ok, it will return bookspider
+
 --------------DEPLOY BY SCRAPYD---------------
