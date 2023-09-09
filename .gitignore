@@ -161,7 +161,7 @@ cython_debug/
 
 
 ## For removing deployment folder
-booksdata.json
+bookscraper/booksdata.json
 dbs/
 scrapyd_logs.txt
 logs/

@@ -1,3 +1,4 @@
+Tutorial: https://www.youtube.com/watch?v=mBoX_JCKZTE&t=11711s&ab_channel=freeCodeCamp.org
 1. Open shell: (scrapy shell)
 2. Run spider: (scrapy crawl bookspider)
 3. Run & save file spider: (scrapy crawl bookspider -O file_name.file_format) Like: bookdata.json, bookdata.csv
