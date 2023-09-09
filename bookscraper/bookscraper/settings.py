@@ -29,12 +29,14 @@ ROTATING_PROXY_LIST = [
    '178.212.49.96:1080',
 ]
 
-PROXY_USER = 'asdas3a4545'
-PROXY_PASSWORD = '12345678'
-PROXY_ENDPOINT = 'gate.smartproxy.com'
-PROXY_POST = '7000'
+## This is for smartproxy solution
 
-# for pip install scrapeops-scrapy-proxy-sdk
+# PROXY_USER = 'asdas3a4545'
+# PROXY_PASSWORD = '12345678'
+# PROXY_ENDPOINT = 'gate.smartproxy.com'
+# PROXY_POST = '7000'
+
+# for pip install scrapeops-scrapy-proxy-sdk : scrapops solution from scrapy team
 
 # SCRAPEOPS_API_KEY = 'df079156-1232-41f4-994c-955c39aef4'
 # SCRAPOPS_PROXY_ENABLED = True

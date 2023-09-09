@@ -1,0 +1,5 @@
+1. Create a droplet
+
+2. Open terminal
+3. sudo apt update
+4. sudo apt install python3-pip
