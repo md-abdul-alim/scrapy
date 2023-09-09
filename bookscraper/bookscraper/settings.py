@@ -87,13 +87,16 @@ DOWNLOADER_MIDDLEWARES = {
    # "rotating_proxies.middlewares.RotatingProxyMiddleware": 610, # for fixed ip
    # "rotating_proxies.middlewares.BanDetectionMiddleware": 620, # for fixed ip
    # "scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk": 725,
+   'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+   'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
 }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    "scrapy.extensions.telnet.TelnetConsole": None,
-#}
+EXTENSIONS = {
+   # "scrapy.extensions.telnet.TelnetConsole": None,
+   'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500,
+}
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
