@@ -27,3 +27,6 @@ Note:
 
 10. For scrapyops proxy solution can also use scrapy package.
 	--> pip install scrapeops-scrapy-proxy-sdk
+
+
+11. rokomary splider run command: scrapy crawl rokomarispider -O book.json
